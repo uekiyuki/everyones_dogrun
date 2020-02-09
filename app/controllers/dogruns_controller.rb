@@ -13,7 +13,7 @@ class DogrunsController < ApplicationController
   end
 
   def create
-    @dogrun = Dogrun.new(dogrun_params)
+    @dogrun = current_user.dogruns.build(dogrun_params)
     if @dogrun.save
       flash[:notice] = "ドッグランを登録しました."
       redirect_to dogrun_path(@dogrun.id)

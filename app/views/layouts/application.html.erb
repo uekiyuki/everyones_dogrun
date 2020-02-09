@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EveryonesDogrun</title>
+    <title>みんなのドッグラン！</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  </head> 
 
   <body>
-    <%= yield %>
-  </body>
+  <header id="header">
+    <div class="logo">
+      <h2>みんなのドッグラン！</h2>
+    </div>
+    <% if current_user %>
+      <ul>
+        <li><%= link_to 'ドッグラン一覧', dogruns_path(current_user.id)  %></li>
+        <% if current_user.admin? %>
+          <li><%= link_to 'ユーザー一覧', admin_users_path(current_user.id) %></li>
+        <% end %>
+        <li><%= link_to 'ログアウト', logout_path, method: :delete,　class: 'nav-link'  %></li>
+        <li><%= link_to current_user.name, user_path(current_user.id) %></li>
+      </ul>
+
+    <% else %>
+      <ul>
+      <%= link_to t('sigin_up'), new_user_path %>
+      <%= link_to t('ログイン'), new_session_path %>
+      </ul>
+    <% end %>
+  </header>
+
+    <%= yield %>  
+  <footer>
+    <p>運営会社　うえき 株式会社</p>
+    <p>© 2015-2016 Copyright Dogs Corp.</p>
+  </footer>
 </html>

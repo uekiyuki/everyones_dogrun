@@ -18,8 +18,10 @@
         <td><%= dogrun.adress %></td>
         <td><%= image_tag dogrun.dogrun_image.url %></td>
         <td><%= link_to 'Show', dogrun %></td>
+        <% if log_in? && dogrun.user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_dogrun_path(dogrun) %></td>
         <td><%= link_to 'Destroy', dogrun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
