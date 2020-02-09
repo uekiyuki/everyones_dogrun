@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>DogrunName:</strong>
+  <%= @dogrun.name %>
+</p>
+
+<p>
+  <strong>adress:</strong>
+  <%= @dogrun.adress %>
+</p>
+
+<p>
+  <strong>AvairableTime:</strong>
+  <%= @dogrun.available_time%>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @dogrun.price %>
+</p>
+
+<p>
+  <strong>breadth:</strong>
+  <%= @dogrun.breadth %>
+</p>
+
+<p>
+  <strong>other:</strong>
+  <%= @dogrun.other %>
+</p>
+
+<p>
+  <strong>registrant:</strong>
+  <%# @user.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @dogrun.dogrun_image.url %>
+</p>
+
+<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> |
+<%= link_to 'Back', dogruns_path %>
