@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :log_in?
   # before_action :login_required
   before_action :current_user
+  before_action :current_dogrun
+
 
 
   private
@@ -11,6 +13,9 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
+  def current_dogrun
+    @current_dogrun = params[:id]
+  end
   # def login_required
   #   redirect_to root_path unless current_user
   # end

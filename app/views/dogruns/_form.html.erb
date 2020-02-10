@@ -1,7 +1,7 @@
 <%= form_with(model: dogrun, local: true) do |f| %>
   <% if dogrun.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
       <% dogrun.errors.full_messages.each do |message| %>
@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :adress %>
-    <%= f.text_field :adress %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :available_time %>
-    <%= f.text_field :available_time  %>
+    <%= f.label :opening_at %>
+    <%= f.text_field :opening_at  %>
+  </div>
+
+    <div class="field">
+    <%= f.label :closing_at %>
+    <%= f.text_field :closing_at  %>
   </div>
 
   <div class="field">
@@ -42,10 +47,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :dogrun_image %><br />
-    <%= image_tag(@dogrun.dogrun_image.url) if @dogrun.dogrun_image && @dogrun.dogrun_image.url %>
-    <%= f.file_field :dogrun_image %>
-    <%= f.hidden_field :dogrun_image_cache %>
+    <%= f.label :image %><br />
+    <%= image_tag(@dogrun.image.url) if @dogrun.image && @dogrun.image.url %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="actions">

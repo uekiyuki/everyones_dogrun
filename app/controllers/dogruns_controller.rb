@@ -6,6 +6,9 @@ class DogrunsController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @post = Post.new 
+    @posts = @dogrun.posts
   end
 
   def new
@@ -49,7 +52,7 @@ class DogrunsController < ApplicationController
   end
 
   def dogrun_params
-    params.require(:dogrun).permit(:name, :adress, :available_time, :price, :breadth, :other, :dogrun_image, :dogrun_image_cache)
+    params.require(:dogrun).permit(:name, :address, :opening_at, :closing_at, :price, :breadth, :other, :image, :image_cache)
   end
 
   

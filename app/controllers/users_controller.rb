@@ -46,9 +46,9 @@ class UsersController < ApplicationController
       :password,:name,
       :email,
       :admin_or_not,
-      :user_image, 
-      :user_image_cache, 
-      :content )
+      :image, 
+      :image_cache, 
+      :profile )
   end 
   
   def set_user

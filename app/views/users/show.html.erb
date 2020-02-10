@@ -7,8 +7,8 @@
 
 <h4>名前: <%= @user.name %></h4>
 <h4>メールアドレス: <%= @user.email %></h4>
-<h4>コメント: <%= @user.content %></h4>
-<h4>プロフィール画像:   <%= image_tag @user.user_image.url %></h4>
+<h4>コメント: <%= @user.profile %></h4>
+<h4>プロフィール画像:   <%= image_tag @user.image.url %></h4>
 
 
 <div class="new_task"><%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %></div>
