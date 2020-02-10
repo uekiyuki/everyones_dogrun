@@ -19,12 +19,14 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      flash.now[:notice] = "登録に失敗しました"
+      flash[:notice] = "登録に失敗しました"
       render :new
     end
   end
 
   def show
+    @mydog = Mydog.new 
+    @mydogs = @user.mydogs
   end
   
   def edit
@@ -46,9 +48,9 @@ class UsersController < ApplicationController
       :password,:name,
       :email,
       :admin_or_not,
-      :user_image, 
-      :user_image_cache, 
-      :content )
+      :image, 
+      :image_cache, 
+      :profile )
   end 
   
   def set_user

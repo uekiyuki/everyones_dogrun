@@ -23,10 +23,10 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, class: 'form_control' %><br>
 
-    <%= f.label :user_image %><br>
-    <%= image_tag(@user.user_image.url) if @user.user_image && @user.user_image.url %>
-    <%= f.file_field :user_image %>
-    <%= f.hidden_field :user_image_cache %><br>
+    <%= f.label :image %><br>
+    <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %><br>
 
     <%= f.submit "登録する", class: 'btn btn-primary' %><br>
 
