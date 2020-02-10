@@ -1,0 +1,19 @@
+<% if log_in? && @user.id == current_user.id %>
+<h1>マイページ</h1>
+<% else %>
+<h1>プロフィール<h1>
+<% end%>
+<p><%= notice %></p>
+
+<h4>名前: <%= @user.name %></h4>
+<h4>メールアドレス: <%= @user.email %></h4>
+<h4>コメント: <%= @user.content %></h4>
+<h4>プロフィール画像:   <%= image_tag @user.user_image.url %></h4>
+
+
+<div class="new_task"><%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %></div>
+<div class="my_task"><%= link_to "ドッグラン一覧", dogruns_path, class:"btn btn-primary" %></div>
+
+<% if log_in? && @user.id == current_user.id %>
+<%= link_to 'プロフィールを編集する', edit_user_path(@user) %>
+<% end%>
