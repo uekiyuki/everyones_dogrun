@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   validates :image, presence: true, allow_nil: true
 
   belongs_to :dogrun
+  belongs_to :user
 end

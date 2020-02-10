@@ -1,11 +1,10 @@
-<%= form_with(model: @post, local: true) do |f| %>
-<%= f.hidden_field :dogrun_id, value: @dogrun.id %>
-  <% if @post.errors.any? %>
+<%= form_with(model: post, local: true) do |f| %>
+  <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% @post.errors.full_messages.each do |post| %>
+      <% post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -24,7 +23,7 @@
 
   <div class="field">
     <%= f.label :image %><br />
-    <%= image_tag(@post.image.url) if @post.post_image && @post.post_image.url %>
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
   </div>

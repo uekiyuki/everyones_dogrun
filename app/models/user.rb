@@ -11,4 +11,5 @@ class User < ApplicationRecord
   
   has_many :dogruns
   has_many :posts
+  has_many :mydogs
   end

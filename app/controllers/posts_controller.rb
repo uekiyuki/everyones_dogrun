@@ -7,20 +7,16 @@ class PostsController < ApplicationController
   
   def show
   end
-
-  def new
-    @post = Post.new
-  end
   
   def create
     # binding.pry
     # @post = current_dogrun.posts.build(post_params)
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "口コミを登録しました."
+      flash[:notice] = "口コミを登録しました!"
       redirect_to dogrun_path(@post.dogrun_id)
     else
-      flash.now[:notice] = "口コミ登録に失敗しました"
+      flash[:notice] = "口コミ登録に失敗しました!"
       redirect_to dogrun_path(@post.dogrun_id)
     end
   end
@@ -48,7 +44,7 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:title, :content, :image, :image_cache, :dogrun_id)
+    params.require(:post).permit(:title, :content, :image, :image_cache, :dogrun_id, :user_id)
   end
 
     
