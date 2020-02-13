@@ -1,7 +1,6 @@
 <h1>ドッグラン情報</h1>
 
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Image:</strong>
   <%= image_tag @dogrun.image.url %>
@@ -10,33 +9,26 @@
   <strong>DogrunName:</strong>
   <%= @dogrun.name %>
 </p>
-
 <p>
   <strong>address:</strong>
   <%= @dogrun.address %>
 </p>
-
 <p>
   <strong>OpeningTime:</strong>
   <%= @dogrun.opening_at%>
 </p>
-
 <p>
   <strong>closingTime:</strong>
   <%= @dogrun.closing_at%>
 </p>
-
-
 <p>
   <strong>Price:</strong>
   <%= @dogrun.price %>
 </p>
-
 <p>
   <strong>breadth:</strong>
   <%= @dogrun.breadth %>
 </p>
-
 <p>
   <strong>other:</strong>
   <%= @dogrun.other %>
@@ -47,13 +39,10 @@
   <%= image_tag  @dogrun.user.image.url %>
 </p>
 
-
-
-<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> |
-
-
+<% if log_in? && @dogrun.user_id == current_user.id %>
+<%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> |
+<% end %>
 <h1>口コミ一覧</h1>
-
 <table>
   <thead>
     <tr>
@@ -64,13 +53,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= image_tag post.image.url %></td>
+        <td><%= link_to '口コミ登録者', user_path(post.user_id) %></td>        
         <td><%= link_to 'Show', post %></td>
         <% if log_in? && post.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -89,7 +78,6 @@
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -121,7 +109,4 @@
   <% end %>
 <% end %>
 
-
 <%= link_to 'Back', dogruns_path %>
-
-
