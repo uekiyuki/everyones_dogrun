@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :dogruns
   resources :posts
   resources :mydogs
-  root 'dogruns#index'
+  root 'dogruns/index'
   resources :users #only: [ :new, :create, :show, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :relationships, only: [:create, :destroy]
