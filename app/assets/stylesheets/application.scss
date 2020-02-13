@@ -15,8 +15,8 @@
  *= require_tree .
  */
 /*  
-  @import "bootstrap"
-  @import "tasks"; */
+    @import "bootstrap"
+    @import "tasks"; */
 html {
     position: relative;
     min-height: 100%;
@@ -26,7 +26,6 @@ body {
     /* フッタと同じ高さに設定 */
     margin-bottom: 90px;
     margin-top: 90px;
-
     /* 一番下までスクロールした時の余白 */
     padding-bottom: 0px;
 }
