@@ -35,7 +35,7 @@ body {
     z-index: 9999;
     position: fixed;
     top: 0px;
-    left: 0px;
+    right: 0px;
     width: 100%;
     background-color: #33FFFF;
     height: 54px;
@@ -43,7 +43,7 @@ body {
 }
 
 header .logo {
-    float: right;
+    float: left;
     margin-right: 30px;
     color:#00CCFF;
 }
