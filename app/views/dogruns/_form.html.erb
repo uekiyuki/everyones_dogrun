@@ -2,7 +2,6 @@
   <% if dogrun.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% dogrun.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -23,17 +22,13 @@
 
   <div class="field">
     <%= f.label :opening_at %>
-    <%= f.text_field :opening_at  %>
-  </div>
-
-    <div class="field">
-    <%= f.label :closing_at %>
-    <%= f.text_field :closing_at  %>
+    <%= f.time_select :opening_at  %>　〜
+    <%= f.time_select :closing_at  %>
   </div>
 
   <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price  %>
+    <%= f.label :price %> 
+    <%= f.text_field :price %>
   </div>
 
   <div class="field">

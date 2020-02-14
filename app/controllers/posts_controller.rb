@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
   
   def show
+    # binding.pry
   end
   
   def create
@@ -34,7 +35,7 @@ class PostsController < ApplicationController
   
   def destroy
     @post.destroy
-    redirect_to dogruns_path,notice: 'Post was successfully destroyed.'
+    redirect_to dogrun_path(@post.dogrun_id),notice: 'Post was successfully destroyed.'
   end
   
   private
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:title, :content, :image, :image_cache, :dogrun_id, :user_id)
+    params.require(:post).permit(:title, :content,:image, :image_cache, :dogrun_id, :user_id)
   end
 
     

@@ -3,16 +3,20 @@
 <% else %>
 <h1>プロフィール<h1>
 <% end%>
-<p><%= notice %></p>
 
+<ul>
+<%= image_tag @user.image.url, size: '200x200' %></h4>
 <h4>名前: <%= @user.name %></h4>
 <h4>コメント: <%= @user.profile %></h4>
-<h4>プロフィール画像:   <%= image_tag @user.image.url %></h4>
 
 <% if log_in? && @user.id == current_user.id %>
 <%= link_to 'プロフィールを編集する', edit_user_path(@user) %>
 <% end%>
-<% if log_in? %>
+<% if @user.id != current_user.id %>
+      <div class="item">
+        <%= link_to @user.name, @user %>
+        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %>
+      </div>
 <%= render 'follow_form', user: @user %>
 <% end%>
 
@@ -21,8 +25,6 @@
 <table>
   <thead>
     <tr>
-      <th>iamge</th>
-      <th>name</th>
       
       <th colspan="3"></th>
     </tr>
@@ -31,12 +33,12 @@
   <tbody>
     <% @mydogs.each do |mydog| %>
       <tr>
-        <td><%= image_tag mydog.image.url %></td>
+        <td><%= image_tag mydog.image.url, size: '200x200' %></td>
         <td><%= mydog.name %></td>
         <td><%= link_to 'Show', mydog %></td>
         <% if log_in? && mydog.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_mydog_path(mydog) %></td>
-        <td><%= link_to 'Destroy', mydog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', mydog_path(mydog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -64,10 +66,26 @@
     <%= f.text_field :name %>
   </div>
 
+    <div class="field">
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.radio_button :gender, :male %>男の子 <%= f.radio_button :gender, :female %>女の子 
+  </div>
+
   <div class="field">
     <%= f.label :image %><br />
     <%= image_tag(@mydog.image.url) if @mydog.image && @mydog.image.url %>
     <%= f.file_field :image %>
+    <%#= input type="file",class="sell-upload-drop-file",multiple="multiple",name="image[]",style="display: none"%>
     <%= f.hidden_field :image_cache %>
   </div>
 
@@ -79,6 +97,5 @@
 
 
 <% if log_in? && @user.id == current_user.id %>
-<div class="new_task"><%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %></div>
+<p><div class="new_task"><%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %></div><p>
 <% end %>
-<div class="my_task"><%= link_to "ドッグラン一覧", dogruns_path, class:"btn btn-primary" %></div>
