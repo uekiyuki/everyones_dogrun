@@ -16,7 +16,7 @@
       <tr>
         <td><%= dogrun.name %></td>
         <td><%= dogrun.address %></td>
-        <td><%= image_tag dogrun.image.url %></td>
+        <td><%= image_tag dogrun.image.url, size: '200x200' %></td>
         <td><%= link_to 'Show', dogrun %></td>
         <% if log_in? && dogrun.user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_dogrun_path(dogrun) %></td>
@@ -28,5 +28,6 @@
 </table>
 
 <br>
-
+<% if log_in? %>
 <%= link_to 'New Dogrun', new_dogrun_path %>
+<% end %>

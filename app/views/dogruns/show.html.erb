@@ -1,9 +1,5 @@
-<h1>ドッグラン情報</h1>
-
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @dogrun.image.url %>
+<h2>ドッグラン情報</h2>
+<p> <%= image_tag @dogrun.image.url, size: '200x200' %>
 </p>
 <p>
   <strong>DogrunName:</strong>
@@ -14,12 +10,11 @@
   <%= @dogrun.address %>
 </p>
 <p>
-  <strong>OpeningTime:</strong>
-  <%= @dogrun.opening_at%>
-</p>
-<p>
-  <strong>closingTime:</strong>
-  <%= @dogrun.closing_at%>
+  <strong>営業時間:</strong>
+  <%= @dogrun.opening_at.hour%> :
+  <%= @dogrun.opening_at.min %> ~
+  <%= @dogrun.closing_at.hour%> :
+  <%= @dogrun.closing_at.min%>
 </p>
 <p>
   <strong>Price:</strong>
@@ -37,12 +32,11 @@
 <p>
   <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
   <%= image_tag  @dogrun.user.image.url %>
-</p>
-
 <% if log_in? && @dogrun.user_id == current_user.id %>
-<%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> |
+<%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
 <% end %>
-<h1>口コミ一覧</h1>
+</p>
+<h2>口コミ一覧</h2>
 <table>
   <thead>
     <tr>
@@ -58,7 +52,9 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
+        <% if post.image.url present? %>
         <td><%= image_tag post.image.url %></td>
+        <% end %>
         <td><%= link_to '口コミ登録者', user_path(post.user_id) %></td>        
         <td><%= link_to 'Show', post %></td>
         <% if log_in? && post.user_id == current_user.id %>
@@ -69,6 +65,8 @@
     <% end %>
   </tbody>
 </table>
+
+<P></P>
 
 <% if log_in? %>
 <h3>口コミを登録する</h3>
@@ -89,15 +87,12 @@
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
     <%= f.label :content %>
     <%= f.text_field :content %>
   </div>
 
   <div class="field">
-    <%= f.label :image %><br />
+    <%= f.label :image %>
     <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
@@ -109,4 +104,4 @@
   <% end %>
 <% end %>
 
-<%= link_to 'Back', dogruns_path %>
+<%= link_to 'ドッグラン一覧に戻る', dogruns_path %>

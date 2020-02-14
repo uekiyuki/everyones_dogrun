@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :dogruns
   resources :posts
   resources :mydogs
+  resources :conversations do
+    resources :messages
+  end
   root 'dogruns#index'
   resources :users #only: [ :new, :create, :show, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

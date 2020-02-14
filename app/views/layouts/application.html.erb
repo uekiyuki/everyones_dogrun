@@ -9,6 +9,12 @@
   </head> 
 
   <body>
+    <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </body>
+</html>
   <header id="header">
     <div class="logo">
       <h2>みんなのドッグラン！</h2>

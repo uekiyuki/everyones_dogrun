@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     elsif user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to user_path(user.id), notice: 'ログインしました。'
-    else
+    else      
       flash[:danger] = 'ログインに失敗しました'
       render 'new'
     end

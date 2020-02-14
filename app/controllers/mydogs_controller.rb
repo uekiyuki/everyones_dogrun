@@ -2,14 +2,14 @@ class MydogsController < ApplicationController
   before_action :set_mydog,only: [:show, :edit, :update, :destroy] 
     
   def index
-    @mudogs = Mydog.all
+    @mydogs = Mydog.all
   end
   
   def show
   end
 
   def new
-    @Mydog = Mydog.new
+    @mydog = Mydog.new
   end
   
   def create
@@ -30,7 +30,7 @@ class MydogsController < ApplicationController
   
   def update
     if @mydog.update(mydog_params)
-      redirect_to mydog_path(@mydog.id), notice: '愛犬を編集しました！' 
+      redirect_to mydog_path(@mydog), notice: '愛犬を編集しました！' 
     else
       render :edit 
     end
@@ -38,7 +38,7 @@ class MydogsController < ApplicationController
   
   def destroy
     @mydog.destroy
-    redirect_to user_path,notice: 'Mydog was successfully destroyed.'
+    redirect_to user_path(@current_user),notice: 'Mydog was successfully destroyed.'
   end
   
   private
@@ -50,7 +50,5 @@ class MydogsController < ApplicationController
   def mydog_params
     params.require(:mydog).permit(:name, :breed, :age, :gender, :image, :image_cache, :user_id)
   end
-
-    
   
 end

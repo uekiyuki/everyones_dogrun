@@ -35,9 +35,8 @@
 
   <div class="field">
     <%= f.label :gender %>
-    <%= f.text_field :gender %>
+    <%= f.radio_button :gender, :male %>男の子 <%= f.radio_button :gender, :female %>女の子 
   </div>
-
 
   <div class="actions">
     <%= f.submit %>
