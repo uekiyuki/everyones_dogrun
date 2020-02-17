@@ -2,7 +2,11 @@ class DogrunsController < ApplicationController
   before_action :set_dogrun,only: [:show, :edit, :update, :destroy] 
   
   def index
-    @dogruns = Dogrun.all
+    # @dogruns = Dogrun.all
+    # @dogruns = @dogruns.page(params[:page]).per(2)  
+    @q = Dogrun.ransack(params[:q])
+    @dogruns = @q.result(distinct: true).page(params[:page]).per(6) 
+
   end
 
   def show
@@ -52,7 +56,7 @@ class DogrunsController < ApplicationController
   end
 
   def dogrun_params
-    params.require(:dogrun).permit(:name, :address, :opening_at, :closing_at, :price, :breadth, :other, :image, :image_cache)
+    params.require(:dogrun).permit(:name, :address, :opening_at, :closing_at, :price, :breadth, :other, :image, :image_cache, :name_cont)
   end
 
   

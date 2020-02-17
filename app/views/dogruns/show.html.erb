@@ -1,31 +1,34 @@
-<h2>ドッグラン情報</h2>
-<p> <%= image_tag @dogrun.image.url, size: '200x200' %>
-</p>
-<p>
-  <strong>DogrunName:</strong>
+<div class="container">
+<div class="row">
+
+<div><h2>ドッグラン情報</h2><div>
+<p> <%= image_tag @dogrun.image.url, size: '200x200' %></p>
+
+
+  <strong><%= t('dogrun_name') %> :</strong>
   <%= @dogrun.name %>
 </p>
 <p>
-  <strong>address:</strong>
+  <strong><%= t('address') %> :</strong>
   <%= @dogrun.address %>
 </p>
 <p>
-  <strong>営業時間:</strong>
+  <strong><%= t('business hours') %> :</strong>
   <%= @dogrun.opening_at.hour%> :
   <%= @dogrun.opening_at.min %> ~
   <%= @dogrun.closing_at.hour%> :
   <%= @dogrun.closing_at.min%>
 </p>
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('price') %> :</strong>
   <%= @dogrun.price %>
 </p>
 <p>
-  <strong>breadth:</strong>
+  <strong><%= t('breadth') %> :</strong>
   <%= @dogrun.breadth %>
 </p>
 <p>
-  <strong>other:</strong>
+  <strong><%= t('other') %> :</strong>
   <%= @dogrun.other %>
 </p>
 
@@ -40,10 +43,10 @@
 <table>
   <thead>
     <tr>
-      <th>title</th>
-      <th>content</th>
-      <th>image</th>
-      <th>口コミ登録者</th>
+      <th><%= t('title') %></th>
+      <th><%= t('content') %> </th>
+      <th><%= t('image') %> </th>
+      <th><%= t('poster') %> </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -55,11 +58,11 @@
         <% if post.image.url present? %>
         <td><%= image_tag post.image.url %></td>
         <% end %>
-        <td><%= link_to '口コミ登録者', user_path(post.user_id) %></td>        
-        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to t('poster'), user_path(post.user_id) %></td>        
+        <td><%= link_to t('Show'), post %></td>
         <% if log_in? && post.user_id == current_user.id %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('Edit'), edit_post_path(post) %></td>
+        <td><%= link_to t('Destroy'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -104,4 +107,9 @@
   <% end %>
 <% end %>
 
-<%= link_to 'ドッグラン一覧に戻る', dogruns_path %>
+<%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
+
+</div>
+</div>
+</div>
+</div>

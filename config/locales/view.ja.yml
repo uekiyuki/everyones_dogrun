@@ -1,0 +1,78 @@
+ja:
+  neme: 名前
+  dogrun_neme: 名前
+  address: 住所
+  task: タスク
+  user: ユーザー
+  task_name: タスク名
+  label: ラベル
+  note: 内容
+  name: ユーザー名
+  email: メールアドレス
+  current_password: 現在のパスワード
+  password: パスワード
+  password_confirmation: 確認用パスワード
+  remember_me: ログインを記憶
+  create: 保存
+  index: タスク一覧
+  user_index: ユーザー一覧
+  show: 詳細
+  edit: 編集
+  destroy: 削除
+  new: 新規作成
+  confirm: 本当に削除しますか?
+  created_at: 作成日時
+  time_limit: 終了期限
+  search: 検索
+  priority: 優先度
+  done: 完了
+  not_started: 未着手
+  in_progress: 進行中
+  hold: 保留中
+  sort_priority: 優先度でソートする
+  user_entry: ユーザー登録
+  admin: 管理者権限
+  admin_user_name: 管理ユーザー名
+  updated_at: 更新日時
+  log_in: ログインしました
+  log_out: ログアウトしました
+  logout: ログアウト
+  sigin_up: サインアップ
+  task_count: タスク数
+  login: ログイン
+  # high: 高s
+  # medium: 中
+  # low: 低 
+  not started yet: 未着手
+  Done: 完了
+  WIP: 作業中
+  Sing_up: 新規登録
+  log_in: ログイン
+  log_out: ログアウト
+  user:
+  title: タイトル
+  name: 名前
+  email: メールアドレス
+  current_password: 現在のパスワード
+  age: 年齢
+  male: 男の子
+  female: 女の子
+  sex: 性別
+  breed: 犬種
+  password: パスワード
+  password_confirmation: 確認用パスワード
+  remember_me: ログインを記憶
+  dogrun_name : ドッグラン名
+  title: タイトル
+  name: 名前
+  address: 住所
+  opening_at: 営業時
+  price: 利用料金
+  breadth: 広さ
+  other: その他
+  image: 写真
+  poster: 口コミ登録者
+  content: 内容
+  business hours: 営業時間
+
+  

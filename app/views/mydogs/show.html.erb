@@ -1,26 +1,26 @@
+<div class="container">
 
 <p>
-  <strong>Image:</strong>
   <%= image_tag @mydog.image.url %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name') %>　:</strong>
   <%= @mydog.name%>
 </p>
 
 <p>
-  <strong>Breed:</strong>
+  <strong><%= t('breed') %>　:</strong>
   <%= @mydog.breed%>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong><%= t('age') %>　:</strong>
   <%= @mydog.age%>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong><%= t('sex') %>　:</strong>
   <%= @mydog.gender%>
 </p>
 
@@ -29,3 +29,6 @@
 <%= link_to 'Edit', edit_mydog_path(@mydog) %> |
 <% end %>
 <%= link_to 'Back', user_path(@mydog.user_id) %>
+
+</div>
+</div>

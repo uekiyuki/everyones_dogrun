@@ -1,33 +1,55 @@
+<div class="container">
+<div class="row">
 <p id="notice"><%= notice %></p>
 
-<h1>ドッグラン一覧</h1>
+<h4>ドッグラン一覧</h4>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :dogrun, "Keyword" %>
+  <%= f.search_field :address_cont %>
+  <%= f.submit t('search') %>
+  <% end %>
+
+<div class="card-body">
+<div class="card-title">
+
 
 <table>
   <thead>
     <tr>
-      <th>name</th>
-      <th>address</th>
+      <th><%= t('dogrun_name') %></th>
+      <th><%= t('address') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @dogruns.each do |dogrun| %>
       <tr>
         <td><%= dogrun.name %></td>
         <td><%= dogrun.address %></td>
         <td><%= image_tag dogrun.image.url, size: '200x200' %></td>
-        <td><%= link_to 'Show', dogrun %></td>
+        <td><%= link_to t('Show'), dogrun , class:"btn btn-primary"%></td>
         <% if log_in? && dogrun.user.id == current_user.id %>
-        <td><%= link_to 'Edit', edit_dogrun_path(dogrun) %></td>
-        <td><%= link_to 'Destroy', dogrun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('Edit'), edit_dogrun_path(dogrun) , class:"btn btn-primary"%></td>
+        <td><%= link_to t('Destroy'), dogrun, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %></td>
         <% end %>
+      </div>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= paginate @dogruns %>
+<%= page_entries_info @dogruns %><br>
+
 <% if log_in? %>
-<%= link_to 'New Dogrun', new_dogrun_path %>
+<%= link_to t('New Dogrun'), new_dogrun_path, class:"btn btn-primary" %>
 <% end %>
+
+</div>
+</div>
+</div>
+</div>
+
+
+

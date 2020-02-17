@@ -1,7 +1,10 @@
+<h1 class="text-center"><%=User.find(@conversation.sender_id).name%>さんと<%=User.find(@conversation.recipient_id).name%>さんの<br>メッセージ</h1>
+<div class="container">
+
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
-<div class="ui segment">
+
   <% @messages.each do |message| %>
     <% if message.body.present? %>
       <div class="item">
@@ -20,7 +23,7 @@
       </div>
     <% end %>
   <% end %>
-</div>
+
 <%= form_with(model: [@conversation, @message]) do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
@@ -30,3 +33,4 @@
     <%= f.submit "メッセージを送る" %>
   </div>
 <% end %>
+</div>

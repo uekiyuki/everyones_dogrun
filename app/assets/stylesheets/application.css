@@ -30,20 +30,21 @@ body {
     padding-bottom: 0px;
 }
 
-#header {
+header {
     z-index: 9999;
     position: fixed;
     top: 0px;
     right: 0px;
     width: 100%;
     background-color: #33FFFF;
-    height: 54px;
+    height: 100px;
 
 }
 
 header .logo {
     float: left;
-    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 30px;
     color:#00CCFF;
 }
 
@@ -66,14 +67,34 @@ header li {
 
 footer {
     width: 100%;
-    left: 0px;
+    left: 30px;
     background-color: #33FFFF;
-    color: #FF6666;
+    color:#00CCFF;
     text-align: center;
     margin: auto;
+    height: 200px;
     margin-bottom: 20px;
     bottom: 0;
-    font-size: 15px;
+    font-size: 25px;
     position: relative;
-    bottom: 0;
+    padding-top:70px;
+    position: relative;
+}
+
+body {
+    padding-top: 54px;
+    }
+
+@media (min-width: 992px) {
+    body {
+    padding-top: 56px;
+    }
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.pagination {
+    margin-bottom: 30px;
 }
