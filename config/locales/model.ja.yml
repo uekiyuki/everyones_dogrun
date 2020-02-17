@@ -1,0 +1,54 @@
+ja:
+  activerecord:
+    models:
+      post: 口コミ
+      mydog: 愛犬
+      dogrun: ドッグラン
+      user: ユーザー
+      label: ラベル
+    attributes:
+      task:
+        title: タイトル
+        content: 内容
+        time_limit: 期限
+        status: 状態
+        priority: 優先度
+        tasks: タスク一覧
+        label: ラベル
+        # high: 高
+        # medium: 中
+        # low: 低 
+      label:
+        label_name: ラベル名
+      user:
+        title: タイトル
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        age: 年齢
+        sex: 性別
+        admin: 管理者権限
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      mydog:
+        name: 名前
+        breed: 犬種
+        age: 年齢
+        gender: 性別
+        image: 写真
+      dogrun:
+        dogrun_name: 名前
+        address: 住所
+        business hours: 営業時間
+        price: 利用料金
+        breadth: 広さ
+        other: その他
+        image: 写真
+      post:
+        title: タイトル
+        content: 内容
+
+
+
+        

@@ -15,11 +15,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "新規登録しました.ログインしました"
+      flash[:notice] = "新規登録しました.ログインしました!"
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      flash[:notice] = "登録に失敗しました"
+      flash[:notice] = "登録に失敗しました!"
       render :new
     end
   end
@@ -38,6 +38,18 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def following
+    @user  = User.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follower'
   end
 
   private

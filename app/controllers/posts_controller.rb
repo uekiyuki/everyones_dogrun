@@ -48,6 +48,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content,:image, :image_cache, :dogrun_id, :user_id)
   end
 
-    
-  
 end

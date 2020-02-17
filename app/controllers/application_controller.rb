@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :current_user
   before_action :current_dogrun
 
-
-
   private
 
   def current_user
@@ -19,7 +17,6 @@ class ApplicationController < ActionController::Base
   # def login_required
   #   redirect_to root_path unless current_user
   # end
-
   # #ログインしていないときやマイページなどに飛ばないようにする
   def authenticate_user
     if current_user == nil

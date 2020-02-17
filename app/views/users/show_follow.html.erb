@@ -1,0 +1,13 @@
+<div class="container">
+
+<% @user.following.each do |user| %>
+<table>
+<tr>
+  <td>  <%= user.name %> </td>
+  <td><%= link_to t('詳細'), user_path(user) %></td>
+</tr>
+</table>
+<% end %>
+<%= link_to t('Back'), @user %>
+
+</div>

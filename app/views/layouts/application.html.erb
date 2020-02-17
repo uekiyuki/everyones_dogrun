@@ -9,11 +9,11 @@
   </head> 
 
   <body>
-    <body>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
   </body>
+
 </html>
   <header id="header">
     <div class="logo">
@@ -38,8 +38,10 @@
   </header>
 
     <%= yield %>  
-  <footer>
-    <p>運営会社　うえき 株式会社</p>
+  <footer >
+    <div class="container">
+    <p class="m-0 text-center text-white">運営会社　うえき 株式会社</p>
     <p>© 2015-2016 Copyright Dogs Corp.</p>
+    </div>
   </footer>
 </html>
