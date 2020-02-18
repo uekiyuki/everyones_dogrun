@@ -66,7 +66,7 @@ ja:
   title: タイトル
   name: 名前
   address: 住所
-  opening_at: 営業時
+  business_hours: 営業時間
   price: 利用料金
   breadth: 広さ
   other: その他
