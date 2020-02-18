@@ -40,7 +40,7 @@ ja:
       dogrun:
         dogrun_name: 名前
         address: 住所
-        business hours: 営業時間
+        business_hours: 営業時間
         price: 利用料金
         breadth: 広さ
         other: その他

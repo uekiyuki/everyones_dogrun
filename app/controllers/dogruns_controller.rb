@@ -6,7 +6,6 @@ class DogrunsController < ApplicationController
     # @dogruns = @dogruns.page(params[:page]).per(2)  
     @q = Dogrun.ransack(params[:q])
     @dogruns = @q.result(distinct: true).page(params[:page]).per(6) 
-
   end
 
   def show
@@ -30,7 +29,6 @@ class DogrunsController < ApplicationController
     end
   end
 
-
   def edit
   end
 
@@ -40,8 +38,6 @@ class DogrunsController < ApplicationController
     else
       render :edit 
     end
-  end
-
   end
 
   def destroy
@@ -59,4 +55,5 @@ class DogrunsController < ApplicationController
     params.require(:dogrun).permit(:name, :address, :opening_at, :closing_at, :price, :breadth, :other, :image, :image_cache, :name_cont)
   end
 
+end
   

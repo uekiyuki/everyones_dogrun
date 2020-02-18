@@ -77,7 +77,7 @@
 
   <div class="field">
     <%= f.label :age %>
-    <%= f.text_field :age %>
+    <%= f.number_field :age %>
   </div>
 
   <div class="field">
@@ -96,13 +96,16 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
   <% end %>
 <% end %>
- <div class="actions">
+
+<div class="actions">
 <% if log_in? && @user.id == current_user.id %>
-<%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %></div><p>
+<%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %>
 <% end %>
 <%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
+</div>
 
 </div>
 </div>
