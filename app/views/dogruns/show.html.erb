@@ -34,7 +34,11 @@
 
 <p>
   <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
+  <% if @dogrun.user.image? %>
   <%= image_tag  @dogrun.user.image.url %>
+  <% else %>
+  <%= image_tag "/assets/default.jpg" %>
+  <% end %>
 <% if log_in? && @dogrun.user_id == current_user.id %>
 <%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
 <% end %>
