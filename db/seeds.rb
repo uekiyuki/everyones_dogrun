@@ -1,121 +1,121 @@
-# User.create!(
-#   [
-#     {
-#       name: "Aさん",
-#       email: "aa@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain02-space02-300x300.png"),
+User.create!(
+  [
+    {
+      name: "Aさん",
+      email: "a@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain02-space02-300x300.png"),
 
-#     },
-#     {
-#       name: "Bさん",
-#       email: "b@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki02-300x300.png"),
+    },
+    {
+      name: "Bさん",
+      email: "b@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki02-300x300.png"),
 
-#     },
-#     {
-#       name: "Cさん",
-#       email: "c@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki03-300x300.png"),
+    },
+    {
+      name: "Cさん",
+      email: "c@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki03-300x300.png"),
 
-#     },
-#     {
-#       name: "Dさん",
-#       email: "d@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki04-300x300.png"),
+    },
+    {
+      name: "Dさん",
+      email: "d@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain05-seijinshiki04-300x300.png"),
 
-#     },
-#     {
-#       name: "Eさん",
-#       email: "e@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain06-biji03-300x300.png"),
-#     },
-#     {
-#       name: "Fさん",
-#       email: "f@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain09-utyuu3-300x300.png"),
-#     },
-#     {
-#       name: "Gさん",
-#       email: "g@gmail.com",
-#       password: "1111",
-#       password_confirmation: "1111",
-#       image: open("#{Rails.root}/db/seed_fixtures/illustrain09-utyuu4-300x300.png"),
-#     },
-#   ]
-# )
+    },
+    {
+      name: "Eさん",
+      email: "e@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain06-biji03-300x300.png"),
+    },
+    {
+      name: "Fさん",
+      email: "f@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain09-utyuu3-300x300.png"),
+    },
+    {
+      name: "Gさん",
+      email: "g@gmail.com",
+      password: "1111",
+      password_confirmation: "1111",
+      image: open("#{Rails.root}/db/seed_fixtures/illustrain09-utyuu4-300x300.png"),
+    },
+  ]
+)
 
-#     Mydog.create!(
-#   [
-#     {
-#       user_id: 1,
-#       name: "ラブ",
-#       breed: "ミニチュワ・シュナウザー",
-#       age: "１",
-#       gender: "female",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_0035.jpeg"),
-#     },
-#     {
-#       user_id: 2,
-#       name: "チョコ",
-#       breed: "ラブラドール・レトリーバー？",
-#       age: "１3",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_1657.jpeg"),
-#     },
-#     {
-#       user_id: 3,
-#       name: "ミルク",
-#       breed: "ラブラドール・レトリーバー",
-#       age: "１2",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_4144.jpeg"),
-#     },
-#     {
-#       user_id: 4,
-#       name: "ココ",
-#       breed: "ミックス",
-#       age: "１3",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_0140.jpeg"),
-#     },
-#     {
-#       user_id: 5,
-#       name: "チョコ",
-#       breed: "コーギー",
-#       age: "14",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_0146.jpeg"),
-#     },
-#     {
-#       user_id: 6,
-#       name: "ロン",
-#       breed: "ミニチュワ・ダックスフンド",
-#       age: "15",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_0144.jpeg"),
-#     },
-#     {
-#       user_id: 7,
-#       name: "はな",
-#       breed: "ねこ",
-#       age: "6",
-#       gender: "male",
-#       image: open("#{Rails.root}/db/seed_fixtures/IMG_2278.jpeg"),
-#     },
-#   ]
-# )
+    Mydog.create!(
+  [
+    {
+      user_id: 1,
+      name: "ラブ",
+      breed: "ミニチュワ・シュナウザー",
+      age: "１",
+      gender: "female",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_0035.jpeg"),
+    },
+    {
+      user_id: 2,
+      name: "チョコ",
+      breed: "ラブラドール・レトリーバー？",
+      age: "１3",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_1657.jpeg"),
+    },
+    {
+      user_id: 3,
+      name: "ミルク",
+      breed: "ラブラドール・レトリーバー",
+      age: "１2",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_4144.jpeg"),
+    },
+    {
+      user_id: 4,
+      name: "ココ",
+      breed: "ミックス",
+      age: "１3",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_0140.jpeg"),
+    },
+    {
+      user_id: 5,
+      name: "チョコ",
+      breed: "コーギー",
+      age: "14",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_0146.jpeg"),
+    },
+    {
+      user_id: 6,
+      name: "ロン",
+      breed: "ミニチュワ・ダックスフンド",
+      age: "15",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_0144.jpeg"),
+    },
+    {
+      user_id: 7,
+      name: "はな",
+      breed: "ねこ",
+      age: "6",
+      gender: "male",
+      image: open("#{Rails.root}/db/seed_fixtures/IMG_2278.jpeg"),
+    },
+  ]
+)
 Dogrun.create!(
   [
     {
@@ -138,14 +138,14 @@ Dogrun.create!(
       price: "300円",
       breadth: "５００坪",
       other: "
-      　☆「利用できる犬」の項目に対応していない犬。
-      　☆人に対して攻撃性のある犬、攻撃をしたことのある犬。
-      　☆他の犬に対し攻撃的な犬、ケンカを抑制できない犬。
-      　☆闘犬類、攻撃的な犬、他の利用者に恐怖感を与える犬。
-      　☆興奮状態の犬。
-      　☆飼い主（利用者）が行動を制御できない犬。
-      　☆飼い主（利用者）が不在で放置の犬。
-      　☆発情中のメス犬。",
+        ☆「利用できる犬」の項目に対応していない犬。
+        ☆人に対して攻撃性のある犬、攻撃をしたことのある犬。
+        ☆他の犬に対し攻撃的な犬、ケンカを抑制できない犬。
+        ☆闘犬類、攻撃的な犬、他の利用者に恐怖感を与える犬。
+        ☆興奮状態の犬。
+        ☆飼い主（利用者）が行動を制御できない犬。
+        ☆飼い主（利用者）が不在で放置の犬。
+        ☆発情中のメス犬。",
       image: open("#{Rails.root}/db/seed_fixtures/dog1.jpeg")
     },
     {

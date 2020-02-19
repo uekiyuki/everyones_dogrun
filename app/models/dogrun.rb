@@ -5,7 +5,7 @@ class Dogrun < ApplicationRecord
   validates :image, presence: true, allow_nil: true
   validates :opening_at, presence: true
   validates :closing_at, presence: true
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :posts, dependent: :destroy
   
 end

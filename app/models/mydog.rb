@@ -6,7 +6,7 @@ class Mydog < ApplicationRecord
   validates :gender,  presence: true, length: { maximum: 10 }
   validates :image, presence: true, allow_nil: true
 
-  belongs_to :user
+  belongs_to :user, optional: true
   enum gender: { male: 1, female: 2 }
 
 end
