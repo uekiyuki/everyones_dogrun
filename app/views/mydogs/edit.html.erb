@@ -1,10 +1,9 @@
 <div class="container">
-<div class="row">
+  <div class="row">
 <%= form_with(model: @mydog, local: true) do |f| %>
   <% if @mydog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mydog.errors.count, "error") %> prohibited this mydog from being saved:</h2>
-
       <ul>
       <% @mydog.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,7 +12,7 @@
     </div>
   <% end %>
 
-    <div class="field">
+  <div class="field">
     <%= image_tag(@mydog.image.url) if @mydog.image && @mydog.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
@@ -43,10 +42,7 @@
     <%= f.submit %>
   </div>
 
-
-
-
-<%= link_to 'Back', user_path(@mydog.user_id) %>
+  <%= link_to 'Back', user_path(@mydog.user_id) %>
 <% end %>
-</div>
+  </div>
 </div>

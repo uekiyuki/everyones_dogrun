@@ -1,5 +1,5 @@
 <div class="container">
-<div class="row">
+  <div class="row">
 <%= form_with(model: @user, local: true) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -32,5 +32,5 @@
     <%= f.submit "登録する", class: 'btn btn-primary' %><br>
 
 <% end %>
-</div>
+  </div>
 </div>

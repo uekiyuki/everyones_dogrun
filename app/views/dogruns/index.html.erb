@@ -1,18 +1,15 @@
 <div class="container">
-<div class="row">
+  <div class="row">
+    <div class="card-body">
+      <div class="card-title">
 
-<h4>ドッグラン一覧</h4>
+  <h4>ドッグラン一覧</h4>
 
-<%= search_form_for @q do |f| %>
-  <%= f.label :dogrun, "Keyword" %>
-  <%= f.search_field :address_cont %>
-  <%= f.submit t('search') %>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :dogrun, "住所から検索" %>
+    <%= f.search_field :address_cont %>
+    <%= f.submit t('search') %>
   <% end %>
-
-<div class="card-body">
-<div class="card-title">
-
-
 <table>
   <thead>
     <tr>
@@ -44,9 +41,9 @@
 <%= link_to t('New Dogrun'), new_dogrun_path, class:"btn btn-primary" %>
 <% end %>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

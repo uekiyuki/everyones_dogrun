@@ -32,5 +32,8 @@
   <div>
     <%= f.submit "メッセージを送る" %>
   </div>
+  <div>
+  <%= link_to 'Back', user_path(User.find(@conversation.recipient_id)) %>
+  </div>
 <% end %>
 </div>

@@ -53,6 +53,33 @@ RSpec.describe 'user', type: :system do
       FactoryBot.create(:user)
     end
   
+    it 'メールアドレス変更' do
+      visit new_session_path
+      fill_in 'メールアドレス', with: 'customer1@email.com'
+      fill_in 'パスワード', with: 'password'
+      click_button 'ログイン'
+      click_on 'マイページ'
+      click_on 'プロフィールを編集する'
+      fill_in 'メールアドレス', with: 'update_mail@gmail.com'
+      click_button '登録する'
+      sleep(1)
+      expect(page).to have_content 'プロフィールを編集しました！'
+    end
+  
+    it 'パスワード変更' do
+      visit new_session_path
+      fill_in 'メールアドレス', with: 'customer1@email.com'
+      fill_in 'パスワード', with: 'password'
+      click_button 'ログイン'
+      click_on 'マイページ'
+      click_on 'プロフィールを編集する'
+      fill_in 'パスワード', with: 'passpass'
+      fill_in '確認用パスワード', with: 'passpass'
+      click_button '登録する'
+      sleep(1)
+      expect(page).to have_content 'プロフィールを編集しました！'
+    end
+
     it 'ログイン成功' do
       visit new_session_path
       fill_in 'メールアドレス', with: 'customer1@email.com'
@@ -85,31 +112,6 @@ RSpec.describe 'user', type: :system do
       click_on 'ログアウト'
       expect(page).to have_content 'ログアウトしました'
     end
-  
-    it 'メールアドレス変更' do
-      visit new_session_path
-      fill_in 'メールアドレス', with: 'customer1@email.com'
-      fill_in 'パスワード', with: 'password'
-      click_button 'ログイン'
-      click_on 'マイページ'
-      click_on 'プロフィールを編集する'
-      fill_in 'メールアドレス', with: 'update_mail@gmail.com'
-      click_button '登録する'
-      expect(page).to have_content 'プロフィールを編集しました!'
-    end
-  
-    it 'パスワード変更' do
-      visit new_session_path
-      fill_in 'メールアドレス', with: 'customer1@email.com'
-      fill_in 'パスワード', with: 'password'
-      click_button 'ログイン'
-      click_on 'マイページ'
-      click_on 'プロフィールを編集する'
-      fill_in 'パスワード', with: 'passpass'
-      fill_in '確認用パスワード', with: 'passpass'
-      click_button '登録する'
-      sleep(1)
-      expect(page).to have_content 'プロフィールを編集しました!'
-    end
+
   end
 end
