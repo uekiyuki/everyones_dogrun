@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :dogrun do 
     user #FactoryBot/usersでuserを作成
-    name {"テスト"}
+    name {"代々木公園"}
     address {"東京"}
     opening_at {"2020-02-17 07:00:00"}
     closing_at {"2020-02-17 16:00:00"}

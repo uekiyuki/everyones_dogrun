@@ -13,15 +13,15 @@ class MydogsController < ApplicationController
   end
   
   def create
-    # binding.pry
-    # @post = current_dogrun.posts.build(post_params)
     @mydog = Mydog.new(mydog_params)
     if @mydog.save
       flash[:notice] = "愛犬を登録しました."
       redirect_to user_path(@mydog.user_id)
     else
       flash[:notice] = "愛犬の登録に失敗しました"
-      redirect_to user_path(@mydog.user_id)
+      @user = User.find(@mydog.user_id)
+      @mydogs = @user.mydogs
+      render template: 'users/show' #, :collection => User.find(params[:user_id])
     end
   end
   

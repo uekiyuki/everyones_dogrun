@@ -1,15 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="card-body">
-      <div class="card-title">
+    
+
 
   <h4>ドッグラン一覧</h4>
-
+<div class="card-body">
+<div class="col-sm">
   <%= search_form_for @q do |f| %>
     <%= f.label :dogrun, "住所から検索" %>
     <%= f.search_field :address_cont %>
     <%= f.submit t('search') %>
   <% end %>
+
+  <% if log_in? %>
+<%= link_to t('ドッグラン登録'), new_dogrun_path, class:"btn btn-info" %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -33,13 +39,9 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <%= paginate @dogruns %>
 <%= page_entries_info @dogruns %><br>
-
-<% if log_in? %>
-<%= link_to t('ドッグラン登録'), new_dogrun_path, class:"btn btn-info" %>
-<% end %>
 
       </div>
     </div>

@@ -1,19 +1,19 @@
 <div class="container">
   <div>
   <% if log_in? && @user.id == current_user.id %>
-  <h3>マイページ</h3>
+      <h3>マイページ</h3>
   <% else %>
-  <h3>プロフィール</h3>
+      <h3>プロフィール</h3>
   <% end%>
   </div>
 
   <% if @user.image? %>
-  <p><div><%= image_tag @user.image.url, size: '200x200' %></div></p>
+    <p><div><%= image_tag @user.image.url, size: '200x200' %></div></p>
   <% else %>
-  <p><div><%= image_tag "/assets/default.jpg", size: '100x100' %></div></p>
+    <p><div><%= image_tag "/assets/default.jpg", size: '100x100' %></div></p>
   <% end %>
-  <p><div>名前: <%= @user.name %></div></p>
-  <p><div>コメント: <%= @user.profile %></コメント:></div><p>
+    <p><div>名前: <%= @user.name %></div></p>
+    <p><div>コメント: <%= @user.profile %></コメント:></div><p>
 
   <% if log_in? && @user.id == current_user.id %>
     <%= link_to 'プロフィールを編集する', edit_user_path(@user) %>
@@ -53,25 +53,25 @@
 
   <% if log_in? && @user.id == current_user.id %>
     <h3>愛犬を登録する</h3>
-      <%= form_with model: @mydog, local: true  do |f| %>
-      <%= f.hidden_field :user_id, value: @user.id %>
+    <%= form_with model: @mydog, local: true  do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+
     <% if @mydog.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(mydog.errors.count, "error") %> prohibited this post from being saved:</h2>
         <ul>
-        <% @mydog.errors.full_messages.each do |mydog| %>
+        <% @mydog.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-    <% end %>
+        <% end %>
         </ul>
       </div>
-  <% end %>
+    <% end %>
 
   <div class="">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :breed %>
     <%= f.text_field :breed %>
   </div>
@@ -99,8 +99,8 @@
     <%= f.submit %>
   </div>
 
+    <% end %>
   <% end %>
-<% end %>
 
   <div class="actions">
     <% if log_in? && @user.id == current_user.id %>
@@ -109,8 +109,5 @@
   <%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
   </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+      
 </div>
