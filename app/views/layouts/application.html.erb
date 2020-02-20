@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
-　<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>初心者向けホームページテンプレート tp_beginner5</title>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ここにサイト説明を入れます">
-<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
-<link rel="stylesheet" href="css/style.css">
 
-  <head>
     <title>みんなのドッグラン！</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,40 +11,39 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head> 
 
-
-
   <body>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
   </body>
 
-</html>
-  <header id="header">
-    <div class="logo">
-      <h2>みんなのドッグラン！</h2>
-    </div>
-    <% if current_user %>
+<header id="header">
+      <h1><%= image_tag "/assets/イメージ.jpg", size: '200x500' %></h1>
+</header>
+
+<nav id="menubar">
       <ul>
-        <li><%= link_to 'ドッグラン一覧', dogruns_path(current_user.id)  %></li>
+        <li><%= link_to 'ドッグラン一覧', dogruns_path  %></li>
+    <% if current_user %>
         <% if current_user.admin? %>
           <li><%= link_to 'ユーザー一覧', admin_users_path(current_user.id) %></li>
         <% end %>
         <li><%= link_to 'ログアウト', logout_path, method: :delete,　class: 'nav-link'  %></li>
         <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
-      </ul>
     <% else %>
-      <ul>
-      <%= link_to t('sigin_up'), new_user_path %>
-      <%= link_to t('ログイン'), new_session_path %>
+      <li><%= link_to t('sigin_up'), new_user_path %></li>
+      <li><%= link_to t('ログイン'), new_session_path %></li>
       </ul>
     <% end %>
-  </header>
+  </nav>
+
+<div id="contents">
+
+<section>
+
     <%= yield %>  
   <footer >
-    <div class="container">
-    <p class="m-0 text-center text-white">運営会社　うえき 株式会社</p>
-    <p>© 2020 Copyright Dogs Corp.</p>
+    <small>Copyright© UEKI All Rights Reserved.</small>
+    <span class="pr">運営会社うえき株式会社</span>
     </div>
   </footer>
-</html>
