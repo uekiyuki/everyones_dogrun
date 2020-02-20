@@ -18,7 +18,9 @@ class PostsController < ApplicationController
       redirect_to dogrun_path(@post.dogrun_id)
     else
       flash[:notice] = "口コミ登録に失敗しました!"
-      redirect_to dogrun_path(@post.dogrun_id)
+      @dogrun =  Dogrun.find(@post.dogrun_id)
+      @posts = @dogrun.posts
+      render template: 'dogruns/show'
     end
   end
   
