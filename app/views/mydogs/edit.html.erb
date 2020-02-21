@@ -3,7 +3,7 @@
 <%= form_with(model: @mydog, local: true) do |f| %>
   <% if @mydog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mydog.errors.count, "error") %> prohibited this mydog from being saved:</h2>
+      
       <ul>
       <% @mydog.errors.full_messages.each do |message| %>
         <li><%= message %></li>

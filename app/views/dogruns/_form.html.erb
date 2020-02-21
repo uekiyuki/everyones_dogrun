@@ -3,7 +3,7 @@
 <%= form_with(model: dogrun, local: true) do |f| %>
   <% if dogrun.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this post from being saved:</h2>
+
       <ul>
       <% dogrun.errors.full_messages.each do |message| %>
         <li><%= message %></li>
