@@ -57,11 +57,10 @@
     <%= f.hidden_field :user_id, value: @user.id %>
 
     <% if @mydog.errors.any? %>
-      <div id="error_explanation">
-        
+      <div id="error_explanation">       
         <ul>
         <% @mydog.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <h2><%= message %></h2>
         <% end %>
         </ul>
       </div>

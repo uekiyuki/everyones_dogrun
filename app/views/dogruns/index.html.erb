@@ -23,7 +23,7 @@
   <tbody>
     <% @dogruns.each do |dogrun| %>
       <tr>
-        <td><%= link_to dogrun.name, dogrun , class:"btn btn-primary"%></td>
+        <a><td><%= link_to dogrun.name, dogrun , class:"btn btn-primary"%></td><a>
         <td><%= dogrun.address %></td>
         <td><%= image_tag dogrun.image.url, size: '200x200' %></td>
         <% if log_in? && dogrun.user.id == current_user.id %>
