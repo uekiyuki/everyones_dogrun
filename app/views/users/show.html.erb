@@ -41,10 +41,10 @@
         <tr>
           <td><%= image_tag mydog.image.url, size: '200x200' %></td>
           <td><%= mydog.name %></td>
-          <td><%= link_to 'Show', mydog %></td>
+          <td><%= link_to '詳細', mydog %></td>
         <% if log_in? && mydog.user_id == current_user.id %>
-          <td><%= link_to 'Edit', edit_mydog_path(mydog) %></td>
-          <td><%= link_to 'Destroy', mydog_path(mydog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '編集', edit_mydog_path(mydog) %></td>
+          <td><%= link_to '削除', mydog_path(mydog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         </tr>
       <% end %>
@@ -107,7 +107,7 @@
     <% if log_in? && @user.id == current_user.id %>
       <%= link_to "ドッグラン作成画面", new_dogrun_path, class:"btn btn-primary" %>
     <% end %>
-  <%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
+  <%= link_to 'ドッグランに戻る',  dogruns_path, class:"btn btn-primary" %>
   </div>
     
 </div>
