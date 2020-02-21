@@ -12,14 +12,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head> 
 
-  <body>
+<body>
+
+<div id="container">
+
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
-
 <header>
-  <h1 id="logo"><% link_to 'ドッグラン一覧', dogruns_path %><img src="images/logo.png" alt="みんなのドッグラン！"></></h1>
   <aside id="mainimg"><%= image_tag "/assets/mainimg.jpg" %></aside>
 </header>
 
