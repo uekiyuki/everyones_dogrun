@@ -52,9 +52,24 @@ RSpec.describe 'user', type: :system do
     before do
       FactoryBot.create(:user)
     end
-  
+    it 'パスワード変更' do
+      visit new_session_path
+      fill_in 'メールアドレス', with: 'customer1@email.com'
+      fill_in 'パスワード', with: 'password'
+      click_button 'ログイン'
+      click_on 'マイページ'
+      sleep(1)
+      click_on 'プロフィールを編集する'
+      fill_in 'パスワード', with: 'passpass'
+      fill_in '確認用パスワード', with: 'passpass'
+      click_button '登録する'
+      sleep(1)
+      expect(page).to have_content 'プロフィールを編集しました！'
+    end
+
     it 'メールアドレス変更' do
       visit new_session_path
+      sleep(1)
       fill_in 'メールアドレス', with: 'customer1@email.com'
       fill_in 'パスワード', with: 'password'
       click_button 'ログイン'
@@ -66,20 +81,6 @@ RSpec.describe 'user', type: :system do
       expect(page).to have_content 'プロフィールを編集しました！'
     end
   
-    it 'パスワード変更' do
-      visit new_session_path
-      fill_in 'メールアドレス', with: 'customer1@email.com'
-      fill_in 'パスワード', with: 'password'
-      click_button 'ログイン'
-      click_on 'マイページ'
-      click_on 'プロフィールを編集する'
-      fill_in 'パスワード', with: 'passpass'
-      fill_in '確認用パスワード', with: 'passpass'
-      click_button '登録する'
-      sleep(1)
-      expect(page).to have_content 'プロフィールを編集しました！'
-    end
-
     it 'ログイン成功' do
       visit new_session_path
       fill_in 'メールアドレス', with: 'customer1@email.com'
@@ -110,6 +111,7 @@ RSpec.describe 'user', type: :system do
       fill_in 'パスワード', with: 'password'
       click_button 'ログイン'
       click_on 'ログアウト'
+      sleep(1)
       expect(page).to have_content 'ログアウトしました'
     end
 

@@ -16,11 +16,12 @@ RSpec.describe 'フォロー及びメッセージ機能テスト', type: :system
         click_on 'メッセージを送る'
         fill_in 'message_body', with: 'こんにちは！'
         click_on 'メッセージを送る'
-        sleep(2)
+        sleep(0.5)
         expect(page).to have_content 'こんにちは！'
       end
       
       it 'ドッグラン詳細画面からドッグラン登録者をフォローする' do
+        sleep(0.5)
         click_on 'フォローする'
         click_on 'マイページ'
         click_on 'フォロー'

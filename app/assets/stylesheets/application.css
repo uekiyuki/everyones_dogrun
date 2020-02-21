@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* @import "bootstrap" */
 
 /*PC・タブレット・スマホ(全端末)共通設定
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -271,3 +272,24 @@ body {
 .ws,.wl {width: 94%;}
 
 }
+
+.p-top {
+  min-width: 960px;
+  &__title {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__introduce {
+    margin: 0 auto;
+    th {
+        padding: 0 15px;
+    }
+    td {
+      padding: 0 15px;
+    }
+  }
+  &__paginate {
+    text-align: center;
+    margin:0 auto;
+  }

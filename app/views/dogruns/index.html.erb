@@ -1,26 +1,25 @@
-<head>
 
-  <h2>ドッグラン一覧</h2>
-<div class="card-body">
-<div class="col-sm">
-  <%= search_form_for @q do |f| %>
+<h3><%= search_form_for @q do |f| %>
     <%= f.label :dogrun, "住所から検索" %>
     <%= f.search_field :address_cont %>
     <%= f.submit t('search') %>
-  <% end %>
+  <% end %></h3>
 
+  <h2>ドッグラン一覧</h2>
+
+<table class="ta1">
   <% if log_in? %>
-<%= link_to t('ドッグラン登録'), new_dogrun_path, class:"btn btn-info" %>
+<caption><%= link_to t('ドッグラン登録'), new_dogrun_path, class:"btn btn-info" %></caption>
 <% end %>
 
+<div id="contents">
+
+<section id="new">
 <table>
-  <thead>
     <tr>
       <th><%= t('dogrun_name') %></th>
       <th><%= t('address') %></th>
-      <th colspan="3"></th>
     </tr>
-  </thead>
   <tbody>
     <% @dogruns.each do |dogrun| %>
       <tr>
@@ -37,13 +36,10 @@
   </tbody>
 </table>
 </div>
-<%= paginate @dogruns %>
-<%= page_entries_info @dogruns %><br>
-
-      </div>
-    </div>
-  </div>
+<div class='p-top__paginate'><%= paginate @dogruns %>
+<%= page_entries_info @dogruns %></div>
+</section>
+</table>
 </div>
-
 
 

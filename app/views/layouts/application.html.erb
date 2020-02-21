@@ -3,23 +3,26 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>みんなのドッグラン！</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head> 
+</head> 
 
   <body>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-  </body>
 
-<header id="header">
-      <h1><%= image_tag "/assets/イメージ.jpg", size: '200x500' %></h1>
+
+<header>
+  <aside id="mainimg"><%= image_tag "/assets/mainimg.jpg" %></aside>
 </header>
+
+<div id="contents">
 
 <nav id="menubar">
       <ul>
@@ -37,13 +40,11 @@
     <% end %>
   </nav>
 
-<div id="contents">
-
-<section>
-
     <%= yield %>  
   <footer >
     <small>Copyright© UEKI All Rights Reserved.</small>
     <span class="pr">運営会社うえき株式会社</span>
     </div>
   </footer>
+
+</div>
