@@ -4,50 +4,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>みんなのドッグラン！</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head> 
 
 <body>
-
-<div id="container">
-
+  <div id="container">
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+    <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
-<header>
-  <aside id="mainimg"><%= image_tag "/assets/mainimg.jpg" %></aside>
-</header>
+  <header>
+    <aside id="mainimg"><%= image_tag "/assets/mainimg.jpg" %></aside>
+  </header>
 
-<div id="contents">
-
-<nav id="menubar">
-      <ul>
-        <li><%= link_to 'ドッグラン一覧', dogruns_path  %></li>
-    <% if current_user %>
+    <div id="contents">
+      <nav id="menubar">
+        <ul>
+          <li><%= link_to 'ドッグラン一覧', dogruns_path  %></li>
+      <% if current_user %>
         <% if current_user.admin? %>
           <li><%= link_to 'ユーザー一覧', admin_users_path(current_user.id) %></li>
         <% end %>
-        <li><%= link_to 'ログアウト', logout_path, method: :delete,　class: 'nav-link'  %></li>
-        <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
-    <% else %>
-      <li><%= link_to t('sigin_up'), new_user_path %></li>
-      <li><%= link_to t('ログイン'), new_session_path %></li>
-      </ul>
-    <% end %>
-  </nav>
-
+          <li><%= link_to 'ログアウト', logout_path, method: :delete,　class: 'nav-link'  %></>
+          <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+      <% else %>
+          <li><%= link_to t('sigin_up'), new_user_path %></li>
+          <li><%= link_to t('ログイン'), new_session_path %></li>
+        </ul>
+      <% end %>
+      </nav>
     <%= yield %>  
+    </div>
+
   <footer >
     <small>Copyright© UEKI All Rights Reserved.</small>
     <span class="pr"> 運営会社うえき株式会社　</span>
     <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
-    </div>
   </footer>
 
-</div>
+  </div>
+<body>

@@ -44,7 +44,7 @@
 
   <div class="field">
     <%= f.label :image %><br />
-    <%= image_tag(@dogrun.image.url) if @dogrun.image && @dogrun.image.url %>
+    <%= image_tag(@dogrun.image.url, size: '200x200')  if @dogrun.image && @dogrun.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
   </div>

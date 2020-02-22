@@ -1,4 +1,4 @@
-<div class="container">
+<td class="container">
   <div>
   <% if log_in? && @user.id == current_user.id %>
       <h3>マイページ</h3>
@@ -7,27 +7,29 @@
   <% end%>
   </div>
 
+<table>
+  <tbody>
+    <tr>
   <% if @user.image? %>
-    <p><div><%= image_tag @user.image.url, size: '200x200' %></div></p>
+      <td><%= image_tag @user.image.url, size: '200x200' %></td>
   <% else %>
-    <p><div><%= image_tag "/assets/default.jpg", size: '100x100' %></div></p>
+      <td>%= image_tag "/assets/default.jpg", size: '100x100' %></td>
   <% end %>
-    <p><div>名前: <%= @user.name %></div></p>
-    <p><div>コメント: <%= @user.profile %></コメント:></div><p>
-
+    </tr>
+      <tr><%= @user.name %></tr>
+      <tr>コメント: <%= @user.profile %></tr>
   <% if log_in? && @user.id == current_user.id %>
-    <%= link_to 'プロフィールを編集する', edit_user_path(@user) %>
+      <td><%= link_to 'プロフィールを編集する', edit_user_path(@user) %></td>
   <% end%>
-
   <% if log_in? && @user.id != current_user.id %>
-    <%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %>
-    <%= render 'follow_form', user: @user %>
+      <td><%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post %></<td>
+      <td><%= render 'follow_form', user: @user %></td>
   <% end%>
-
-  <div>
-    <%= link_to "フォロー", following_user_path(@user) %>
-    <%= link_to "フォロワー", followers_user_path(@user) %>
-  </div>
+      <td><%= link_to "フォローしている人", following_user_path(@user) %></td>
+      <td><%= link_to "フォロワー", followers_user_path(@user) %></td>
+    </tr>
+  </tbody>
+</table>
 
   <h3>愛犬</h3>
   <table>
@@ -44,7 +46,7 @@
           <td><%= link_to '詳細', mydog %></td>
         <% if log_in? && mydog.user_id == current_user.id %>
           <td><%= link_to '編集', edit_mydog_path(mydog) %></td>
-          <td><%= link_to '削除', mydog_path(mydog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '削除', mydog_path(mydog.id), method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
         <% end %>
         </tr>
       <% end %>
