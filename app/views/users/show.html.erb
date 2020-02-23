@@ -13,7 +13,7 @@
   <% if @user.image? %>
       <td><%= image_tag @user.image.url, size: '200x200' %></td>
   <% else %>
-      <td>%= image_tag "/assets/default.jpg", size: '100x100' %></td>
+      <td><%= image_tag "/assets/default.jpg", size: '100x100' %></td>
   <% end %>
     </tr>
       <tr><%= @user.name %></tr>
