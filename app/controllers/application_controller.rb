@@ -14,10 +14,7 @@ class ApplicationController < ActionController::Base
   def current_dogrun
     @current_dogrun = params[:id]
   end
-  # def login_required
-  #   redirect_to root_path unless current_user
-  # end
-  # #ログインしていないときやマイページなどに飛ばないようにする
+  
   def authenticate_user
     if current_user == nil
       redirect_to root_path
@@ -31,7 +28,5 @@ class ApplicationController < ActionController::Base
   def log_in?
     @current_user.present?
   end
-
-
 
 end

@@ -11,34 +11,23 @@
 <h4><%= link_to t('ドッグラン登録'), new_dogrun_path %></h4>
 <% end %>
 
-
 <div class="main">
 <% @dogruns.each do |dogrun| %>
   <section class="card">
-    <div class="card-img"><%= image_tag dogrun.image.url %></div>
+    <%= image_tag dogrun.image.url,class:"card-img"%>
       <div class="card-content">
       <h1 class="card-title"><%= dogrun.name %></h1>
       <p class="card-text"><%= dogrun.address %></p>
-    </div> 
     <div class="card-link">
+        <%= link_to t('詳細'), dogrun_path(dogrun) %>      
         <% if log_in? && dogrun.user.id == current_user.id %>
-        <%= link_to t('Edit'), edit_dogrun_path(dogrun) %>
-        <%= link_to 'Destroy', dogrun_path(dogrun), method: :delete, data: { confirm: '本当に削除していいですか?' }  %>
+        <%= link_to t('編集'), edit_dogrun_path(dogrun) %>
+        <%= link_to '削除', dogrun_path(dogrun), method: :delete, data: { confirm: '本当に削除していいですか?' }  %>
         <% end %>
     </div>  
   </section>
 <% end %>
-</div>  
+</div>  s
 
-<nav>
-  <ul class="main-nav">
-    <li><a href="#" class="logo">Logo</a></li>
-    <li><a href="#">Menu 1</a></li>
-    <li><a href="#">Menu 2</a></li>
-    <li><a href="#">Menu 3</a></li>
-    <li><a href="#">Menu 4</a></li>
-  </ul>
-</nav>
-
-<div><%= paginate @dogruns %>
+<%= paginate @dogruns %>
 <%= page_entries_info @dogruns %>

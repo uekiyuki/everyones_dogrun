@@ -13,7 +13,7 @@ body {
 	color: #666;	/*全体の文字色*/
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
-	line-height: 2;		/*行間*/
+	// line-height: 2;		/*行間*/
 	background: #eff2eb;	/*背景色*/
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
@@ -45,16 +45,29 @@ li {
   /* リスト先頭の黒丸を削除 */
   list-style: none;
 }
+
 /*ヘッダー（ロゴが入った最上段のブロック）
 ---------------------------------------------------------------------------*/
 /*headerブロック*/
 header {
 	text-align: center;	/*内容を中央よせ*/
 }
-/*ロゴ画像設定*/
-#logo img {
-	width: 400px;	/*画像幅*/
-	margin: 40px auto 40px;	/*ロゴの上と下に40pxスペースを空ける設定*/
+
+/*タイトル設定*/
+.title {
+	text-align: center;
+	margin: 5px auto 0px;	/*ロゴの上と下に40pxスペースを空ける設定*/
+	font-size: 30px;
+	color: #546247;
+	text-decoration: none;
+}
+
+.title a {
+	text-decoration: none;	// margin: 0 10px;
+}
+
+.title a:hover {
+	opacity: 0.6;
 }
 
 /*トップページのメイン画像
@@ -65,6 +78,7 @@ header {
 	margin-bottom: 20px;	/*下に空けるスペース*/
 	margin-top: 10px;
 }
+
 
 /*メニュー
 ---------------------------------------------------------------------------*/
@@ -161,6 +175,7 @@ footer {
 	clear: both;
 	text-align: center;	/*文字をセンタリング*/
 	padding: 30px 0px 10px;	/*上、左右、下へのボックス内の余白*/
+	margin: 20px;
 }
 footer a {
 	text-decoration: none;
@@ -168,24 +183,6 @@ footer a {
 }
 footer .pr {
 	display: block;
-}
-
-/*トップページ内「更新情報・お知らせ」ブロック
----------------------------------------------------------------------------*/
-/*ブロック全体の設定*/
-#new dl {
-	padding: 0px 20px;	/*上下、左右へのブロック内の余白*/
-	margin-bottom: 20px;	/*ブロックの下(外側)に空ける余白*/
-}
-/*日付設定*/
-#new dt {
-	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
-	float: left;
-	width: 8em;
-}
-/*記事設定*/
-#new dd {
-	padding-left: 8em;
 }
 
 /*テーブル
@@ -248,12 +245,10 @@ footer .pr {
 .l {text-align: left;}
 
 img {
-  width: 100%;
+  // width: 100%;
 	object-fit: cover;
 	max-width: 100%;
-	height: 238px;
 }
-
 
 /*画面幅580px以下の設定
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -294,9 +289,11 @@ body {
 /*その他
 ---------------------------------------------------------------------------*/
 .ws,.wl {width: 94%;}
-
 }
-	
+
+/*indexページ
+---------------------------------------------------------------------------*/
+/*各ブロックごとの設定*/	
 	.card {
 		background: #fff;
 		border-radius: 5px;
@@ -330,7 +327,8 @@ body {
 	.card-link {
 		text-align: center;
 		border-top: 1px solid #eee;
-		padding: 20px;
+		padding: 	10px;
+		font-size: 18px;
 	}
 	.card-link a {
 		text-decoration: none;
@@ -346,13 +344,6 @@ body {
 		display: flex;
 		flex-wrap: wrap;
 	}
-
-	// .main section
-
-	// 	flex: 1;
-	// }
-
-
 
 	.main-nav {
 		display: -webkit-flex;
@@ -370,3 +361,18 @@ body {
 	.main-nav .logo {
 		background: #4584b1;
 	}
+
+	/*ページネーション自体のデザイン*/
+
+.nav-links{
+  // padding:2em;
+	display:flex;
+	justify-content: left;
+}
+
+.page-item{
+	width: 77px;
+  height: 30px;
+  // line-height: 50px;
+  margin-top: 7px;
+}

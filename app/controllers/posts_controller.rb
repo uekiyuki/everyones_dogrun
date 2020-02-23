@@ -6,12 +6,9 @@ class PostsController < ApplicationController
   end
   
   def show
-    # binding.pry
   end
   
   def create
-    # binding.pry
-    # @post = current_dogrun.posts.build(post_params)
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "口コミを登録しました!"

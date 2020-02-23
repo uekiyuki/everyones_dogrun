@@ -24,11 +24,9 @@
   <%= @mydog.gender%>
 </p>
 
-
 <% if log_in? && @mydog.user_id == current_user.id %>
 <%= link_to '愛犬を編集する', edit_mydog_path(@mydog) %> |
 <% end %>
 <%= link_to 'プロフィール画面に戻る', user_path(@mydog.user_id) %>
 
-</div>
 </div>

@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   # skip_before_action :login_required, only: [:new, :create]
         
   def new
-    # if current_user.present?
-    #   redirect_to user_path(current_user)
-    # else
-      @user = User.new
-    # end
+    @user = User.new
   end
 
   def create
@@ -88,5 +84,4 @@ class UsersController < ApplicationController
 #       redirect_to user_path(current_user)
 #     end
 #   end
-
 end

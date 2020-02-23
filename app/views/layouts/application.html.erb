@@ -4,6 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>みんなのドッグラン！</title>
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,6 +18,7 @@
     <% end %>
 
   <header>
+    <div class="title"><%= link_to 'Dogruns for everyone!', dogruns_path  %></div>
     <aside id="mainimg"><%= image_tag "/assets/mainimg.jpg" %></aside>
   </header>
 

@@ -1,86 +1,88 @@
 <div class="container">
-<div class="row">
+  <div class="row">
 
-<div><h2>ドッグラン情報</h2><div>
-<p> <%= image_tag @dogrun.image.url, size: '200x200' %></p>
+  <div><h2>ドッグラン情報</h2><div>
+  <p><div class="card-img"><%= image_tag @dogrun.image.url, width: "200px" %></div></p>
 
   <strong><%= t('dogrun_name') %> :</strong>
   <%= @dogrun.name %>
-</p>
-<p>
-  <strong><%= t('address') %> :</strong>
+
+  <p><strong><%= t('address') %> :</strong>
   <%= @dogrun.address %>
-</p>
-<p>
+  </p>
+
+  <p>
   <strong><%= t('business hours') %> :</strong>
   <%= @dogrun.opening_at.hour%> :
   <%= @dogrun.opening_at.min %> ~
   <%= @dogrun.closing_at.hour%> :
   <%= @dogrun.closing_at.min%>
-</p>
-<p>
-  <strong><%= t('price') %> :</strong>
-  <%= @dogrun.price %>
-</p>
-<p>
-  <strong><%= t('breadth') %> :</strong>
-  <%= @dogrun.breadth %>
-</p>
-<p>
-  <strong><%= t('other') %> :</strong>
-  <%= @dogrun.other %>
-</p>
+  </p>
 
-<p>
-  <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
-  <% if @dogrun.user.image? %>
-  <%= image_tag  @dogrun.user.image.url %>
-  <% else %>
-  <%= image_tag "/assets/default.jpg" %>
-  <% end %>
-<% if log_in? && @dogrun.user_id == current_user.id %>
-<%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
-<% end %>
-</p>
+  <p>
+    <strong><%= t('price') %> :</strong>
+    <%= @dogrun.price %>
+  </p>
 
-<h2>口コミ一覧</h2>
-<table>
-  <thead>
-    <tr>
-      <th><%= t('title') %></th>
-      <th><%= t('content') %> </th>
-      <th><%= t('image') %> </th>
-      <th><%= t('poster') %> </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <% if post.image.url present? %>
-        <td><%= image_tag post.image.url %></td>
-        <% end %>
-        <td><%= link_to t('poster'), user_path(post.user_id) %></td>        
-        <td><%= link_to t('詳しく'), post %></td>
-        <% if log_in? && post.user_id == current_user.id %>
-        <td><%= link_to t('編集'), edit_post_path(post) %></td>
-        <td><%= link_to t('削除'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+  <p>
+    <strong><%= t('breadth') %> :</strong>
+    <%= @dogrun.breadth %>
+  </p>
+
+  <p>
+    <strong><%= t('other') %> :</strong>
+    <%= @dogrun.other %>
+  </p>
+
+  <p>
+    <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
+    <% if @dogrun.user.image? %>
+    <%= image_tag  @dogrun.user.image.url %>
+    <% else %>
+    <%= image_tag "/assets/default.jpg" %>
     <% end %>
-  </tbody>
-</table>
+  <% if log_in? && @dogrun.user_id == current_user.id %>
+  <%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
+  <% end %>
+  </p>
 
-<% if log_in? %>
-<h3>口コミを登録する</h3>
-<%= form_with model: @post, local: true  do |f| %>
-<%= f.hidden_field :dogrun_id, value: @dogrun.id %>
-<%= f.hidden_field :user_id, value: @current_user.id %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      
+  <h2>口コミ一覧</h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('title') %></th>
+        <th><%= t('content') %> </th>
+        <th><%= t('image') %> </th>
+        <th><%= t('poster') %> </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.content %></td>
+          <% if post.image.url present? %>
+          <td><%= image_tag post.image.url %></td>
+          <% end %>
+          <td><%= link_to t('poster'), user_path(post.user_id) %></td>        
+          <td><%= link_to t('詳しく'), post %></td>
+          <% if log_in? && post.user_id == current_user.id %>
+          <td><%= link_to t('編集'), edit_post_path(post) %></td>
+          <td><%= link_to t('削除'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% if log_in? %>
+  <h3>口コミを登録する</h3>
+  <%= form_with model: @post, local: true  do |f| %>
+  <%= f.hidden_field :dogrun_id, value: @dogrun.id %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">     
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <h2><%= message %></h2>
@@ -106,12 +108,12 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+    <% end %>
   <% end %>
-<% end %>
 
 <%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>
