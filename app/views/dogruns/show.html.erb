@@ -1,51 +1,6 @@
 <div class="container">
   <div class="row">
 
-  <div><h2>ドッグラン情報</h2><div>
-  <p><div class="card-img"><%= image_tag @dogrun.image.url, width: "200px" %></div></p>
-
-  <strong><%= t('dogrun_name') %> :</strong>
-  <%= @dogrun.name %>
-
-  <p><strong><%= t('address') %> :</strong>
-  <%= @dogrun.address %>
-  </p>
-
-  <p>
-  <strong><%= t('business hours') %> :</strong>
-  <%= @dogrun.opening_at.hour%> :
-  <%= @dogrun.opening_at.min %> ~
-  <%= @dogrun.closing_at.hour%> :
-  <%= @dogrun.closing_at.min%>
-  </p>
-
-  <p>
-    <strong><%= t('price') %> :</strong>
-    <%= @dogrun.price %>
-  </p>
-
-  <p>
-    <strong><%= t('breadth') %> :</strong>
-    <%= @dogrun.breadth %>
-  </p>
-
-  <p>
-    <strong><%= t('other') %> :</strong>
-    <%= @dogrun.other %>
-  </p>
-
-  <p>
-    <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
-    <% if @dogrun.user.image? %>
-    <%= image_tag  @dogrun.user.image.url %>
-    <% else %>
-    <%= image_tag "/assets/default.jpg" %>
-    <% end %>
-  <% if log_in? && @dogrun.user_id == current_user.id %>
-  <%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
-  <% end %>
-  </p>
-
   <h2>口コミ一覧</h2>
   <table>
     <thead>
@@ -108,8 +63,55 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
     <% end %>
   <% end %>
+
+    <div><h2>ドッグラン情報</h2><div>
+  <p><div class="card-img"><%= image_tag @dogrun.image.url, width: "200px" %></div></p>
+
+  <strong><%= t('dogrun_name') %> :</strong>
+  <%= @dogrun.name %>
+
+  <p>
+  <strong><%= t('address') %> :</strong>
+  <%= @dogrun.address %>
+  </p>
+
+  <p>
+  <strong><%= t('business hours') %> :</strong>
+  <%= @dogrun.opening_at.hour%> :
+  <%= @dogrun.opening_at.min %> ~
+  <%= @dogrun.closing_at.hour%> :
+  <%= @dogrun.closing_at.min%>
+  </p>
+
+  <p>
+    <strong><%= t('price') %> :</strong>
+    <%= @dogrun.price %>
+  </p>
+
+  <p>
+    <strong><%= t('breadth') %> :</strong>
+    <%= @dogrun.breadth %>
+  </p>
+
+  <p>
+    <strong><%= t('other') %> :</strong>
+    <%= @dogrun.other %>
+  </p>
+
+  <p>
+    <%= link_to 'ドッグラン登録者' ,user_path(@dogrun.user) %>
+      <% if @dogrun.user.image? %>
+          <%= image_tag  @dogrun.user.image.url %>
+      <% else %>
+        <%= image_tag "/assets/default.jpg" %>
+      <% end %>
+      <% if log_in? && @dogrun.user_id == current_user.id %>
+          <%= link_to 'ドッグラン情報編集', edit_dogrun_path(@dogrun) %> 
+      <% end %>
+  </p>
 
 <%= link_to 'ドッグラン一覧に戻る', dogruns_path, class:"btn btn-primary" %>
 

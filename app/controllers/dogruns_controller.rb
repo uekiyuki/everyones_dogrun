@@ -56,4 +56,3 @@ class DogrunsController < ApplicationController
   end
 
 end
-  
