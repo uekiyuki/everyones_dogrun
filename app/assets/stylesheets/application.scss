@@ -26,8 +26,8 @@ input {
   }
 }
 
-.login{
-  // background: #222;
+.login{ 
+	 background: #DBFFAB;
   box-shadow: 0 0 1rem rgba(0,0,0,0.3);
   min-height: 10rem;
   margin: auto;
@@ -36,15 +36,15 @@ input {
 	border-radius: 5px;
 }
 .login-text {
-  //background: hsl(40,30,60);
-  //border-bottom: .5rem solid white;
+  // background: #DBFFAB;
+  // border-bottom: .5rem solid white;
   color: white;
   font-size: 1.5rem;
   margin: 0 auto;
   max-width: 50%;
   padding: .5rem;
   text-align: center;
-  //text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
+  text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
   .fa-stack-1x {
     color: black;
   }
@@ -64,27 +64,44 @@ input {
     background: white;
     color: black;
     transition: 250ms background ease-in;
-  }
+	}
 }
 
-.login-forgot-pass {
-  //border-bottom: 1px solid white;
-  bottom: 0;
-  color: white;
-  cursor: pointer;
-  display: block;
-  font-size: 75%;
-  left: 0;
-  opacity: 0.6;
-  padding: .5rem;
-  position: absolute;
-  text-align: center;
-  //text-decoration: none;
-  width: 100%;
-  &:hover {
-    opacity: 1;
-  }
+	.usercreate {
+		background: transparent;
+		border: 0 solid;
+		border-bottom: 1px solid rgba(white, .5);
+		color: white;
+		display: block;
+		padding: .5rem;
+		transition: 250ms background ease-in;
+		width: calc(100% - 3rem);
+		&:focus {
+			background: white;
+			color: black;
+			transition: 250ms background ease-in;
+		}
 }
+
+// .login-forgot-pass {
+//   //border-bottom: 1px solid white;
+//   bottom: 0;
+//   color: white;
+//   cursor: pointer;
+//   display: block;
+//   font-size: 75%;
+//   left: 0;
+//   opacity: 0.6;
+//   padding: .5rem;
+//   position: absolute;
+//   text-align: center;
+//   //text-decoration: none;
+//   width: 100%;
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
+
 .login-submit {
   border: 1px solid white;
   background: transparent;
@@ -112,7 +129,7 @@ input {
 
 .video{
 	// display : block;
-	// margin : 50px;
+	margin-bottom : 5px;
 	text-align:center;
 	display: flex;
 	}
@@ -195,7 +212,6 @@ header {
 	margin-top: 10px;
 }
 
-
 /*メニュー
 ---------------------------------------------------------------------------*/
 /*メニュー全体を囲むブロック*/
@@ -203,6 +219,7 @@ header {
 	text-align: center;		/*文字をセンタリング*/
 	font-size: 18px;		/*文字サイズ*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
+	margin-top: 40px;
 }
 /*メニュー１個あたりの設定*/
 #menubar li {
@@ -379,9 +396,7 @@ body {
 .main {
 	flex-direction: column;
 	flex-wrap: wrap;
-
 }
-
 /*メニュー
 ---------------------------------------------------------------------------*/
 /*メニュー１個あたりの設定*/

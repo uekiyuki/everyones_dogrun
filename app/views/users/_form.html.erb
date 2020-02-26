@@ -1,6 +1,11 @@
-<div class="container">
-  <div class="row">
-  <%= video_tag "/videos/Dog.mp4", autoplay: true, loop: true, muted: true, width: "100%;", height: "100%;" %>
+<style>
+#mainimg {
+  display:none;
+}
+</style>
+
+<div class="login">
+  <p class="login-text">
 <%= form_with(model: @user, local: true) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,26 +16,18 @@
       </ul>
     </div>
 <% end %>
-  
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: 'form_control' %><br>
-
-    <%= f.label :email %><br>
-    <%= f.email_field :email, class: 'form_control' %><br>
-
-    <%= f.label :password %><br>
-    <%= f.password_field :password, class: 'form_control' %><br>
-
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, class: 'form_control' %><br>
-
-    <%= f.label :image %><br>
+    <%= f.text_field :name, class: "usercreate", autofocus: "true", required: "true", placeholder: "名前"%><br>
+    <%= f.email_field :email, class: "usercreate", autofocus: "true", required: "true", placeholder: "Email"%><br>
+    <%= f.password_field :password, class: "usercreate", autofocus: "true", required: "true", placeholder: "Password"%><br>
+    <%= f.password_field :password_confirmation, class: "usercreate", autofocus: "true", required: "true", placeholder: "確認用Password"%><br>  
+    <%= f.label :image, class: "usercreate" %><br>
     <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image,class: "usercreate"%>
     <%= f.hidden_field :image_cache %><br>
 
-    <%= f.submit "登録する", class: 'btn btn-primary' %><br>
-
+    <%= f.submit "登録する", class: "login-submit" %><br>
+</p>
 <% end %>
   </div>
 </div>
+ </div>
