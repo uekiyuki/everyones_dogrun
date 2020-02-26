@@ -1,9 +1,22 @@
-  
+<style>
+#mainimg {
+  display:none;
+}
+</style>
+<div class="login">
+  <div class="video">
   <%= video_tag "/videos/Labrador - 20552.mp4", autoplay: true, loop: true, muted: true, width: "100%;", height: "100%;" %>
+  </div>
+  <p class="login-text">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-lock fa-stack-1x"></i>
+    </span>
+  </p>
   <%= form_with(scope: :session, url: sessions_path, local: true) do |form| %>
-    <%= form.label :email, 'メールアドレス' %>
-    <%= form.text_field :email, id: 'session_email' %><br>
-    <%= form.label :password, 'パスワード' %>
-    <%= form.password_field :password, class: 'form_control', id: 'session_password' %><br>
-    <%= form.submit "ログインする" %>
+  <%= form.text_field :email, id: 'session_email',class: "login-username", autofocus: "true", required: "true", placeholder: "Email"  %>
+  <%= form.password_field :password, class: "login-password" ,required:"true", placeholder:"Password",id: 'session_password' %>
+  <%= form.submit "Login", class: "login-submit" %>
   <% end %>
+
+  </div>

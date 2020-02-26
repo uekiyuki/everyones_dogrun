@@ -13,8 +13,8 @@
   <% if @post.image.url present? %>
     <p>
     <strong>Image:</strong>
-    <%= image_tag @post.image.url %>
-    </p>
+    <%= image_tag @post.image.url, size: '500x500' %>
+    </>
   <% end %>
 
   <%= link_to 'Edit', edit_post_path(@post) %> |
