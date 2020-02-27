@@ -1,12 +1,7 @@
-<div class="container">
-
-  <% @user.following.each do |user| %>
-    <table>
-      <tr>
-        <td>  <%= user.name %> </td>
-        <td><%= link_to t('詳細'), user_path(user) %></td>
-      </tr>
-    </table>
-  <% end %>
-  <%= link_to t('Back'), @user %>
-</div>
+<% @user.following.each do |user| %>
+  <td><%= user.name %> </td>
+    <% if user.image? %>
+  <td><%= link_to image_tag(user.image.url, size: '100x100'), user_path(user)  %> </td>
+    <% end%>
+<% end %>
+  <br><%= link_to '戻る', @user %>

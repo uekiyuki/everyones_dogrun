@@ -19,6 +19,7 @@ gem 'mini_magick'
 gem 'bcrypt', '3.1.11'
 gem 'ransack'
 gem 'kaminari'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
