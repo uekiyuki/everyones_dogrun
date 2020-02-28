@@ -169,7 +169,7 @@ Dogrun.create!(
       price: "無料",
       breadth: "1０坪",
       other: "登録制",
-      image: open("#{Rails.root}/db/seed_fixtures/outline02401-thumb-628xauto-5873.jpg")
+      image: open("#{Rails.root}/db/seed_fixtures/toneri.jpeg")
     },
     {
       user_id: 3,
@@ -180,7 +180,7 @@ Dogrun.create!(
       price: "無料",
       breadth: "300坪",
       other: "登録制、工事中",
-      image: open("#{Rails.root}/db/seed_fixtures/access.jpg")
+      image: open("#{Rails.root}/db/seed_fixtures/yoyogi.jpg")
     },
     {
       user_id: 3,
@@ -191,7 +191,7 @@ Dogrun.create!(
       price: "無料",
       breadth: "300坪",
       other: "登録制、工事中",
-      image: open("#{Rails.root}/db/seed_fixtures/access.jpg")
+      image: open("#{Rails.root}/db/seed_fixtures/yoyogi.jpg")
     },
     {
       user_id: 3,
@@ -202,7 +202,7 @@ Dogrun.create!(
       price: "無料",
       breadth: "1200m2",
       other: "登録制",
-      image: open("#{Rails.root}/db/seed_fixtures/kopgp_dogrun_main.png")
+      image: open("#{Rails.root}/db/seed_fixtures/komazawa.jpeg")
     },
     {
       user_id: 1,
